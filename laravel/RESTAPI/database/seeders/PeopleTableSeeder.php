@@ -2,18 +2,27 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\People;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PeopleTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
+    public function run(): void
     {
-        //
+        DB::table('people')->delete();
+
+        $faker = Factory::create();
+
+        for ($i = 0; $i < 50; $i++) {
+            People::create([
+                'FIRST NAME' => $faker->firstName,
+                'SECOND NAME' => $faker->lastName,
+                'TELEPHONE NUMBER' => $faker->phoneNumber,
+                'RESIDENCE ADDRESS' => $faker->address,
+                'COUNTRY' => $faker->country
+            ]);
+        }
     }
 }

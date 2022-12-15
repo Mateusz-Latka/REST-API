@@ -9,8 +9,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('people',[PeopleController::class, 'index']);
-Route::get('people/{id}',[PeopleController::class, 'show']);
-Route::delete('people/{id}', [AuthorController::class, 'delete']);
-Route::post('people', [AuthorController::class, 'create']);
-Route::put('people/{id}', [AuthorController::class, 'update']);
+Route::get('mateuszlatka/305382/people',[PeopleController::class, 'index']);
+Route::get('mateuszlatka/305382/people/{people}',[PeopleController::class, 'show']);
+Route::delete('mateuszlatka/305382/people/{people}', [PeopleController::class, 'delete']);
+Route::post('mateuszlatka/305382/people', [PeopleController::class, 'create']);
+Route::put('mateuszlatka/305382/people/{people}', [PeopleController::class, 'update']);

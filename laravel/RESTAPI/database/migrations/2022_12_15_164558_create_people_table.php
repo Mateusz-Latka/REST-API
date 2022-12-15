@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('FIRST NAME', 255);
             $table->string('SECOND NAME', 255);
-            $table->integer('TELEPHONE NUMBER');
+            $table->string('TELEPHONE NUMBER',255);
             $table->string('RESIDENCE ADDRESS', 255);
             $table->string('COUNTRY', 255);
             $table->timestamps();
